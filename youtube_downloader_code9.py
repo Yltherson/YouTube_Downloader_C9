@@ -17,7 +17,6 @@ def checkURL(link):
         verf=True
         f.close()
     except:
-        verf=False
         print("Lyen telechajeman pa konpatib")
     return verf
 
