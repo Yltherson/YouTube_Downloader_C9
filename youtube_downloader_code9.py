@@ -8,6 +8,8 @@ import urllib.request, urllib.error
 def on_download_progress(stream, chunk, bytes_remaining):
     bytes_downloaded = stream.filesize - bytes_remaining
     percent = bytes_downloaded * 100 / stream.filesize
+    print(f"Progression du téléchargement {int(percent)}%")
+    
 
     print(f"progresyon telechajema {int(percent)}%")
 
@@ -30,8 +32,11 @@ while(not verf):
 
 yt = YouTube(link)
 yt.register_on_progress_callback(on_download_progress)
+<<<<<<< HEAD
 
-print(f"Progression du téléchargement {int(percent)}%")
+
+=======
+>>>>>>> cc6ba223426e55af029d6faf96b0ee116d1ea424
 
 print("#TITLE : ",yt.title,  "#VIEWS :", yt.views,"\n")
 # print(yt.thumbnail)
