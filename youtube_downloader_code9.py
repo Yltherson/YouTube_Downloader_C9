@@ -9,6 +9,7 @@ def on_download_progress(stream, chunk, bytes_remaining):
     bytes_downloaded = stream.filesize - bytes_remaining
     percent = bytes_downloaded * 100 / stream.filesize
 
+    print(f"progresyon telechajema {int(percent)}%")
 
 def checkURL(link):
     verf=False
@@ -28,7 +29,7 @@ while(not verf):
     verf= checkURL(link)
 
 yt = YouTube(link)
-youtube_video.register_on_progress_callback(on_download_progress)
+yt.register_on_progress_callback(on_download_progress)
 
 print(f"Progression du téléchargement {int(percent)}%")
 
